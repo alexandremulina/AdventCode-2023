@@ -11,5 +11,5 @@ func main() {
 	r.GET("/", api.HealthCheck)
 	r.POST("/dayOne", api.DayOne)
 
-	r.Run(":9009")
+	r.Run(":9001")
 }

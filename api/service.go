@@ -54,7 +54,6 @@ func DayOne(c *gin.Context) {
 		})
 		return
 	}
-	var valueList []int
 	re := regexp.MustCompile("[1-9]+")
 	errorList := []int{}
 	total := 0
@@ -74,22 +73,17 @@ func DayOne(c *gin.Context) {
 			continue
 
 		}
-		valueList = append(valueList, num)
 		total += num
 		// for _, char := range line {
 		// 	fmt.Printf("%c", char) // Convert rune to string using %c format specifier
 		// }
 	}
-	sumValueList := 0
-	for _, value := range valueList {
-		sumValueList += value
-	}
+
 	// fmt.Println("Total:", total)
 
 	c.JSON(200, gin.H{
 		"result":     lines,
 		"total":      total,
-		"value2":     sumValueList,
 		"errorCount": errorList,
 		"status":     200,
 	})
