@@ -10,6 +10,7 @@ func main() {
 	r := gin.Default()
 	r.GET("/", api.HealthCheck)
 	r.POST("/dayOne", api.DayOne)
+	r.POST("/dayTwo", api.DayTwo)
 
-	r.Run(":9001")
+	r.Run(":9002")
 }
