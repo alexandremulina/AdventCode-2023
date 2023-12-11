@@ -11,6 +11,7 @@ func main() {
 	r.GET("/", api.HealthCheck)
 	r.POST("/dayOne", api.DayOne)
 	r.POST("/dayTwo", api.DayTwo)
+	r.POST("/dayThree", api.DayThree)
 
 	r.Run(":9002")
 }
