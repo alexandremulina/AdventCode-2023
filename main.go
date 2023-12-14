@@ -8,8 +8,10 @@ import (
 
 func main() {
 	r := gin.Default()
-
+	r.GET("/", api.HealthCheck)
 	r.POST("/dayOne", api.DayOne)
+	r.POST("/dayTwo", api.DayTwo)
+	r.POST("/dayThree", api.DayThreePart2)
 
-	r.Run()
+	r.Run(":9002")
 }
