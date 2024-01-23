@@ -2,11 +2,17 @@ package main
 
 import (
 	"go-advent/api"
+	"log"
+	"net/http"
+	_ "net/http/pprof"
 
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
+	go func() {
+		log.Println(http.ListenAndServe("localhost:6060", nil))
+	}()
 	r := gin.Default()
 	r.GET("/", api.HealthCheck)
 	r.POST("/dayOne", api.DayOne)
