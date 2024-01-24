@@ -20,6 +20,7 @@ func main() {
 	r.POST("/dayThree", api.DayThreePart2)
 	r.POST("/dayFour", api.DayFour)
 	r.POST("/dayFive", api.DayFive)
+	r.POST("/daySix", api.DaySix)
 
 	r.Run(":9002")
 }
